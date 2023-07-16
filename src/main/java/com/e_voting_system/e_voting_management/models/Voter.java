@@ -7,7 +7,6 @@ public class Voter {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private long id;
-    private String candidate;
     private String firstName;
     private String lastName;
     private String partyName;
@@ -24,9 +23,8 @@ public class Voter {
     }
     
 
-    public Voter(String candidate, String firstName, String lastName, String partyName, String gender,
+    public Voter(String firstName, String lastName, String partyName, String gender,
             String dob, String nin, String message, String userId, boolean hasSubmitted, boolean isVerified) {
-        this.candidate = candidate;
         this.firstName = firstName;
         this.lastName = lastName;
         this.partyName = partyName;
@@ -44,15 +42,7 @@ public class Voter {
         return id;
     }
 
-    public String getCandidate() {
-        return candidate;
-    }
-
-    public void setCandidate(String candidate) {
-        this.candidate = candidate;
-    }
-
-
+    
     public String getFirstName() {
         return firstName;
     }

@@ -3,17 +3,17 @@ package com.e_voting_system.e_voting_management.models;
 import jakarta.persistence.*;
 
 @Entity
-public class Post {
+public class Party {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private long id;
-    private String name; 
-
-    public Post(){
+    private String name;
+    
+    public Party(){
 
     }
 
-    public Post(String name) {
+    public Party(String name){
         this.name = name;
     }
 
@@ -29,5 +29,5 @@ public class Post {
         this.name = name;
     }
 
-
+    
 }

@@ -9,12 +9,13 @@ public class Candidate {
     private long id;
     private String firstName;
     private String lastName;
-    private String partyName;
-    private String post;
+    @OneToOne
+    private Party partyName;
+    @OneToOne
+    private Post post;
     private String gender;
     private String dob;
     private String nin;
-    private String message;
     private String userId;
     private boolean hasSubmitted;
     private boolean isVerified;
@@ -25,8 +26,7 @@ public class Candidate {
     }
 
 
-    public Candidate(String firstName, String lastName, String partyName, String post, String gender, String dob, String nin,
-           String message, String userId, boolean hasSubmitted, boolean isVerified) {
+    public Candidate(String firstName, String lastName, Party partyName, Post post, String gender, String dob, String nin, String userId, boolean hasSubmitted, boolean isVerified) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.partyName = partyName;
@@ -34,7 +34,6 @@ public class Candidate {
         this.gender = gender;
         this.dob = dob;
         this.nin = nin;
-        this.message = message;
         this.userId = userId;
         this.hasSubmitted = hasSubmitted;
         this.isVerified = isVerified;
@@ -67,23 +66,22 @@ public class Candidate {
     }
 
 
-    public String getPartyName() {
+    public Party getPartyName() {
         return partyName;
     }
 
 
-    public void setPartyName(String partyName) {
+    public void setPartyName(Party partyName) {
         this.partyName = partyName;
     }
 
     
-
-    public String getPost() {
+    public Post getPost() {
         return post;
     }
 
 
-    public void setPost(String post) {
+    public void setPost(Post post) {
         this.post = post;
     }
 
@@ -117,16 +115,7 @@ public class Candidate {
         this.nin = nin;
     }
 
-    public String getMessage() {
-        return message;
-    }
-
-
-    public void setMessage(String message) {
-        this.message = message;
-    }    
     
-
     public String getUserId() {
         return userId;
     }
